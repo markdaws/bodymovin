@@ -96,7 +96,15 @@ var animationManager = (function(){
         }
     }
 
+    var fpsDuration = 1000 / 25;
+    var lastFrame = Date.now();
     function resume(nowTime) {
+        if (Date.now() - lastFrame < fpsDuration) {
+            requestAnimationFrame(resume);
+            initTime = nowTime;
+            return;
+        }
+        lastFrame = Date.now()
 
         var elapsedTime = nowTime - initTime;
         var i;

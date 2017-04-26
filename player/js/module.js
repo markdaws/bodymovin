@@ -61,7 +61,8 @@
     function destroy(animation){
         return animationManager.destroy(animation);
     }
-    function setQuality(value){
+    function setQuality(value) {
+        alert('setting quality')
         if(typeof value === 'string'){
             switch(value){
                 case 'high':
@@ -120,6 +121,8 @@
     bodymovinjs.installPlugin = installPlugin;
     bodymovinjs.__getFactory = getFactory;
     bodymovinjs.version = '4.1.9';
+    bodymovinjs._what = 123;    
+    alert('i am here')    
 
     function checkReady(){
         if (document.readyState === "complete") {
